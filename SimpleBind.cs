@@ -33,6 +33,8 @@ namespace K4.Bind
 				{
 					leftChangedHandler = () => OnSideChanged(leftWrapper, rightWrapper);
 					leftWrapper.OnChanged += leftChangedHandler;
+
+					leftChangedHandler();
 				}
 				else
 				{
@@ -52,14 +54,9 @@ namespace K4.Bind
 					}
 				}
 
-				static void OnSideChanged(PropertyWrapper<T> changingSide, PropertyWrapper<T> propergatingSide)
+				static void OnSideChanged(PropertyWrapper<T> changingSide, PropertyWrapper<T> propagatingSide)
 				{
-					T newValue = changingSide.Value;
-
-					if(propergatingSide.CanSet)
-					{
-						propergatingSide.Value = newValue;
-					}
+					propagatingSide.Value = changingSide.Value;
 				}
 			}
 
