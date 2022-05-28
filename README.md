@@ -84,7 +84,7 @@ namespace A
 }
 ```
 
-Along the obvious benefit that most of the boilerplate code is no longer needed to be hand-written, thus MVVM infastructure can be easily added to any classes inheriting `MonoBehaviour` or `ScriptableObject`, because MVVM Toolkit can generate code from a field, many, if not all, of the Unity features are retained. 
+Along with the obvious benefit that most of the boilerplate code is no longer needed to be hand-written, thus MVVM infastructure can be easily added to any classes inheriting `MonoBehaviour` or `ScriptableObject`, because MVVM Toolkit can generate code from a field, many, if not all, of the Unity features are retained. 
 
 To set up MVVM Toolkit in Unity:
 1. Download [the latest NuGet package](https://www.nuget.org/packages/Microsoft.Toolkit.Mvvm/) 
