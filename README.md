@@ -6,6 +6,8 @@ This is inspired by [praeclarum/Bind](https://github.com/praeclarum/Bind) to use
 
 The difference between my implementation and the source of inspiration is that, in order to keep things simple, it does not have support for property path. Also, since Microsoft MVVM Toolkit (part of [.NET Community Toolkit](https://github.com/CommunityToolkit/dotnet)) recently added source generator support that can add `INotifyPropertyChanged` boilerplate code to any class, my implementation expects all target objects to implement the interface, thus omitting support for searching via Reflection for events supported by the original implementation. 
 
+The API is also changed to utilize the compile-time type checking to ensure both sides of the binding are of the same type. 
+
 # Usage
 
 ```cs
@@ -82,7 +84,7 @@ namespace A
 }
 ```
 
-Along the obvious benefit that most of the boilerplate code is no longer needed to be hand-written, thus MVVM infastructure can be added to any classes inheriting `MonoBehaviour` or `ScriptableObject`, because MVVM Toolkit can generate code from a field, much of the Unity features are retained. 
+Along the obvious benefit that most of the boilerplate code is no longer needed to be hand-written, thus MVVM infastructure can be easily added to any classes inheriting `MonoBehaviour` or `ScriptableObject`, because MVVM Toolkit can generate code from a field, many, if not all, of the Unity features are retained. 
 
 To set up MVVM Toolkit in Unity:
 1. Download [the latest NuGet package](https://www.nuget.org/packages/Microsoft.Toolkit.Mvvm/) 
